@@ -9,43 +9,51 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var appMainBackground: UIImageView!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        createLabel();
-        //buildTriangle();
+    
+        Background.setToColor(obj: loginBtn, colorName: "black")
+        Background.setToColor(obj: registerBtn, colorName: "black")
+        Background.setToImage(obj: appMainBackground, imageName: "winter-lake")
+        print(appMainBackground.center)
+        animateView()
     }
     
-    func createLabel(){
-        _ = UIView();
-        let labelRect = CGRect(x: 20, y: 20, width: 100, height: 100)
-        let label = UILabel(frame: labelRect)
-        label.text = "Kendall is the best at writting code and you know it! lol this is some more code."
-        label.font = UIFont(name: "Helvetica", size: 12.0)
-        label.textAlignment = .center
-        view.addSubview(label)
-        label.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        label.numberOfLines = 5
-    }
-    
-    func buildTriangle(){
-        
-        let path =  UIBezierPath();
-        path.move(to: CGPoint(x: 80, y: 50))
-        path.addLine(to: CGPoint(x: 140,y:150))
-        path.addLine(to: CGPoint(x: 10, y: 150))
-        path.close()
-        
-        UIColor.green.setFill()
-        UIColor.black.setStroke()
-        path.fill()
-        path.stroke()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func animateView(){
+     
+        let duration = 30.0
+        UIImageView.animate(withDuration: duration) {
+            self.appMainBackground.center.x += 100
+        }
     }
 }
 
+class Background{
+    
+    static func setToColor(obj: AnyObject, colorName: String){
+        if let view = obj as? UIView{
+            
+            switch(colorName){
+                case "black":
+                view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.3)
+                break
+                default:
+                view.backgroundColor = UIColor.clear
+            }
+        }
+    }
+    
+   static func setToImage(obj: AnyObject, imageName: String){
+        
+        if let view = obj as? UIImageView{
+            view.image = UIImage(named: imageName)
+            
+        }
+    }
+}

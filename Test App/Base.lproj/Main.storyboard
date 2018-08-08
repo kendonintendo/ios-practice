@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,63 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Test_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OSy-Dt-lU8">
+                                <rect key="frame" x="0.0" y="0.0" width="537" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="537" id="vHE-Ob-vxl"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="v0Z-ah-Z3g">
+                                <rect key="frame" x="0.0" y="540" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuG-7r-vvP">
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="70"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                        <state key="normal" title="Login"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX0-9G-ryF">
+                                        <rect key="frame" x="190" y="0.0" width="185" height="70"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                        <state key="normal" title="Register"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="8Nv-Ef-jtH"/>
+                                    <constraint firstAttribute="bottom" secondItem="KX0-9G-ryF" secondAttribute="bottom" id="BI7-u0-7F0"/>
+                                    <constraint firstItem="KX0-9G-ryF" firstAttribute="top" secondItem="v0Z-ah-Z3g" secondAttribute="top" id="PWO-Fd-o6B"/>
+                                    <constraint firstItem="MuG-7r-vvP" firstAttribute="top" secondItem="v0Z-ah-Z3g" secondAttribute="top" id="PzR-LL-rFe"/>
+                                    <constraint firstAttribute="trailing" secondItem="KX0-9G-ryF" secondAttribute="trailing" id="YVo-PD-1Bn"/>
+                                    <constraint firstItem="MuG-7r-vvP" firstAttribute="leading" secondItem="v0Z-ah-Z3g" secondAttribute="leading" id="msd-Py-Wjy"/>
+                                    <constraint firstAttribute="bottom" secondItem="MuG-7r-vvP" secondAttribute="bottom" id="v7b-he-6ql"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v0Z-ah-Z3g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="47x-dK-mWC"/>
+                            <constraint firstAttribute="bottom" secondItem="OSy-Dt-lU8" secondAttribute="bottom" id="5Xb-5P-ebo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v0Z-ah-Z3g" secondAttribute="bottom" constant="57" id="YNz-eC-EWx"/>
+                            <constraint firstItem="OSy-Dt-lU8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cLM-50-pz8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v0Z-ah-Z3g" secondAttribute="trailing" id="fCh-vX-hRh"/>
+                            <constraint firstItem="OSy-Dt-lU8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vx7-49-Vs2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="appMainBackground" destination="OSy-Dt-lU8" id="m4D-iN-rKN"/>
+                        <outlet property="loginBtn" destination="MuG-7r-vvP" id="xpK-tw-vGJ"/>
+                        <outlet property="registerBtn" destination="KX0-9G-ryF" id="hNe-vx-Px5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>
